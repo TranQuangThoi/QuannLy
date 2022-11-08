@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 #include <fstream>
@@ -22,4 +23,3 @@ public:
 	}
 
 };
-

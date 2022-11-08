@@ -9,15 +9,14 @@ private:
 public:
 	string id;
 	int state;
-	int GetPricePerHour();
+
+
+	int GetPricePerHour()
+	{
+		price.fGetPrice();
+		if (id[0] == 'M')
+			return price.perHourM;
+		return price.perHourN;
+	}
+
 };
-
-int Room::GetPricePerHour()
-{
-	price.fGetPrice();
-	if (id[0] == 'M')
-		return price.perHourM;
-	return price.perHourN;
-}
-
-

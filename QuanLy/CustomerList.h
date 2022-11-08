@@ -12,7 +12,6 @@
 #include "Date.h"
 #include "RoomList.h"
 using namespace std;
-
 class CustomerList
 {
 public:
@@ -33,6 +32,7 @@ public:
 		this->fInputCustomers();
 
 	}
+
 	void fOutputApp(Customer data)
 	{
 		ofstream fileout;
@@ -45,16 +45,12 @@ public:
 		}
 		fileout << data.id << ";" << data.fullName.lastName << ";" << data.fullName.firstName << ";";
 		data.dateOfBirth.fOuputDate(fileout, data.dateOfBirth);
-		fileout << ";" << data.sex << ";" << data.phoneNumber << ";";
+		fileout << ";" << data.sex << ";" << data.phone << ";";
 		fileout << data.address;
 		filein.close();
 		fileout.close();
 	}
-	inline bool IsExistCustomer()
-	{
-
-		return false;
-	}
+	
 	Customer ReturnById(string id)
 	{
 		Customer customer;
@@ -70,7 +66,7 @@ public:
 		}
 		return customer;
 	}
-	void DetroyCustomerList()//true
+	void DetroyCustomerList()
 	{
 		CustomerNode* temp = this->head;
 		while (this->head != nullptr)
@@ -87,14 +83,14 @@ public:
 		{
 			if (customerNode->data.id.compare(id) == 0)
 			{
-				cout << "Da co du lieu \n";
+				cout << "Da co du lieu trong khach san\n";
 				return true;
 			}
 			customerNode = customerNode->next;
 		}
 		return false;
 	}
-	Customer InputCustomer() //// true
+	Customer InputCustomer() 
 	{
 		Customer customer;
 	NHAPLAICMND:
@@ -130,7 +126,7 @@ public:
 			cout << "Nhap ho va ten lot khach hang: ";
 			cin.seekg(1);
 			getline(cin, customer.fullName.lastName);
-			if (customer.fullName.CheckLastName() == false)
+			if (customer.fullName.IsTrueLastName() == false)
 				throw "Ho khong hop le!";
 			transform(customer.fullName.lastName.begin(), customer.fullName.lastName.end(), customer.fullName.lastName.begin(), toupper);
 		}
@@ -145,7 +141,7 @@ public:
 		{
 			cout << "Nhap ten khach hang: ";
 			getline(cin, customer.fullName.firstName);
-			if (customer.fullName.CheckFirstName() == false)
+			if (customer.fullName.IsTrueFirstName() == false)
 				throw "Ten khong hop le!";
 			transform(customer.fullName.firstName.begin(), customer.fullName.firstName.end(), customer.fullName.firstName.begin(), toupper);
 		}
@@ -222,7 +218,7 @@ public:
 				cout << "Vui long nhap lai\n";
 				goto NHAPNAMSINH;
 			}
-			if (!customer.dateOfBirth.IsTrueDate())
+			if (!customer.dateOfBirth.CheckDate())
 			{
 				throw "Ngay thang nam khong hop le\n";
 			}
@@ -254,10 +250,10 @@ public:
 		try
 		{
 			cout << "Nhap so dien thoai khach hang: ";
-			cin >> customer.phoneNumber;
-			for (int i = 0; i < customer.phoneNumber.length(); i++)
+			cin >> customer.phone;
+			for (int i = 0; i < customer.phone.length(); i++)
 			{
-				if (!(customer.phoneNumber[i] >= '0' && customer.phoneNumber[i] <= '9'))
+				if (!(customer.phone[i] >= '0' && customer.phone[i] <= '9'))
 					throw "So dien thoai khong hop le!";
 			}
 		}
@@ -291,7 +287,7 @@ public:
 		filein.close();
 	}
 
-	void printList()///
+	void printList()
 	{
 		cout << endl;
 		if (this->head == nullptr)
@@ -312,17 +308,14 @@ public:
 		}
 		memset(t, NULL, MAX);
 	}
-	void DeleteById(string id)//xóa 1
+	void DeleteById(string id)
 	{
-		CustomerNode* pDel = head; // tạo một node pDel để xóa
-		//Nếu pDel == Null thì danh sách rỗng
+		CustomerNode* pDel = head; 
 		if (pDel == nullptr) {
 			cout << "Danh sach rong!!!";
 		}
-		//ngược lại thì xét điều kiện
 		else {
 			CustomerNode* pPre = nullptr;
-			//dùng vòng lặp while để tìm ra pDel và pPre (vị trí đứng trước pDel)
 			while (pDel != nullptr) {
 				if (pDel->data.id.compare(id) == 0) {
 					{
@@ -332,26 +325,25 @@ public:
 				pPre = pDel;
 				pDel = pDel->next;
 			}
-			//Nếu pDel == null tức là không tìm thấy số cần xóa
+			
 			if (pDel == nullptr) {
 				cout << "Khong tim thay ma khach hang can xoa";
 			}
-			// Ngược lại tiếp tục xét điều kiện
+		
 			else {
-				// Nếu pDel == list.pHead, tức là số cần xóa ở đầu danh sách
+				
 				if (pDel == head) {
 					head = head->next;
 					pDel->next = nullptr;
 					delete pDel;
 					pDel = nullptr;
 				}
-				//Nếu pDel == list.pTail, tức là số cần xóa ở cuối danh sách
+			
 				else if (pDel->next == nullptr) {
 					pPre->next = nullptr;
 					delete pDel;
 					pDel = nullptr;
 				}
-				// và trường hợp cuối cùng số muốn xóa nằm ở giữa danh sách
 				else {
 					pPre->next = pDel->next;
 					pDel->next = nullptr;
@@ -381,7 +373,7 @@ public:
 		{
 			cout << "Nhap ten khach hang: ";
 			cin >> fname.firstName;
-			if (fname.CheckFirstName() == false)
+			if (fname.IsTrueFirstName() == false)
 				throw "Ten khong hop le!";
 			transform(fname.firstName.begin(), fname.firstName.end(), fname.firstName.begin(), toupper);
 		}
@@ -412,7 +404,7 @@ public:
 		if (!check)
 			cout << "Hien khong co khach hang ten " << fname.firstName << endl;
 	}
-	void AddHead(Customer data)//true
+	void AddHead(Customer data)
 	{
 		CustomerNode* customerNode = new CustomerNode(data);
 		if (this->head == nullptr)
@@ -437,6 +429,5 @@ public:
 		memset(t, '=', 144);
 		cout << left << setw(20) << "" << t << endl;
 	}
-
 
 };

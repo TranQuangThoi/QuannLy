@@ -57,10 +57,7 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Picture.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Picture.txt" />
   </ItemGroup>
 </Project>

@@ -156,9 +156,6 @@
     <ClInclude Include="Trade.h" />
     <ClInclude Include="TradeList.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Picture.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

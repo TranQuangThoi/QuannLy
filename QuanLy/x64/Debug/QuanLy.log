@@ -1,13 +1,14 @@
 ﻿  QuanLy.cpp
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\ServiceList.h(10,1): warning C4005: 'MAX': macro redefinition
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\RoomList.h(7): message : see previous definition of 'MAX'
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\ServiceList.h(73,6): warning C4101: 'k': unreferenced local variable
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\ServiceList.h(73,8): warning C4101: 'SoLuongNow': unreferenced local variable
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\ServiceList.h(395,6): warning C4101: 'k': unreferenced local variable
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\ServiceList.h(395,9): warning C4101: 'SoLuongNow': unreferenced local variable
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\TradeList.h(246,7): warning C4101: 'd': unreferenced local variable
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\TradeList.h(351,10): warning C4566: character represented by universal-character-name '\u1EB7' cannot be represented in the current code page (1252)
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\TradeList.h(381,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\RoomList.h(146): warning C4715: 'RoomList::GetFirstEmptyRoom': not all control paths return a value
-D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\QuanLy\ServiceList.h(68): warning C4715: 'ServiceList::LaySoLuongHangDangCo': not all control paths return a value
-  QuanLy.vcxproj -> D:\cau truc du lieu\do an\ngay_7\QuanLySanBanh\x64\Debug\QuanLy.exe
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\ServiceList.h(10,1): warning C4005: 'MAX': macro redefinition
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\RoomList.h(7): message : see previous definition of 'MAX'
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\ServiceList.h(55,7): warning C4101: 'k': unreferenced local variable
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\ServiceList.h(55,10): warning C4101: 'SoLuongNow': unreferenced local variable
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\ServiceList.h(377,7): warning C4101: 'k': unreferenced local variable
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\ServiceList.h(377,10): warning C4101: 'SoLuongNow': unreferenced local variable
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\TradeList.h(331,11): warning C4566: character represented by universal-character-name '\u1EB7' cannot be represented in the current code page (1252)
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\TradeList.h(226,8): warning C4101: 'd': unreferenced local variable
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\TradeList.h(361,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\QuanLy.cpp(136,7): warning C4101: 'n': unreferenced local variable
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\RoomList.h(128): warning C4715: 'RoomList::GetFirstEmptyRoom': not all control paths return a value
+D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\QuanLy\ServiceList.h(50): warning C4715: 'ServiceList::LaySoLuongHangDangCo': not all control paths return a value
+  QuanLy.vcxproj -> D:\cau truc du lieu\do an\doan_ngay_8\QuanLySanBanh\x64\Debug\QuanLy.exe
